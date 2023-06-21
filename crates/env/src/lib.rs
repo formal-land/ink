@@ -77,6 +77,8 @@ fn panic(info: &core::panic::PanicInfo) -> ! {
 #[cfg(not(any(feature = "std", feature = "no-allocator")))]
 extern crate ink_allocator;
 
+mod types;
+
 mod api;
 mod arithmetic;
 mod backend;
@@ -88,7 +90,6 @@ mod error;
 pub mod hash;
 #[doc(hidden)]
 pub mod topics;
-mod types;
 
 #[cfg(test)]
 mod tests;
