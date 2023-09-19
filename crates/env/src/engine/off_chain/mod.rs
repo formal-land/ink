@@ -30,7 +30,8 @@ use ink_engine::ext::Engine;
 
 /// The off-chain environment.
 pub struct EnvInstance {
-    engine: Engine,
+    // our modification: declared the field as public
+    pub engine: Engine,
 }
 
 impl OnInstance for EnvInstance {
