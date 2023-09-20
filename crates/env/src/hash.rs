@@ -23,7 +23,7 @@ pub trait HashOutput: private::Sealed {
 }
 
 /// Types that are usable as built-in cryptographic hashes.
-pub trait CryptoHash: HashOutput + private::Sealed {
+pub trait CryptoHash: HashOutput {
     /// Hashes the given raw byte input and copies the result into `output`.
     fn hash(input: &[u8], output: &mut <Self as HashOutput>::Type);
 }
