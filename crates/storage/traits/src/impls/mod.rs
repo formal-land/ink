@@ -28,7 +28,7 @@ use ink_primitives::{
 };
 
 /// The private trait helping identify the [`AutoKey`] key type.
-trait KeyType {
+pub trait KeyType {
     /// It is `true` for [`AutoKey`] and `false` for [`ManualKey`].
     /// It helps the [`ResolverKey`] select between the user-specified (left key)
     /// and the auto-generated (right key) keys.
@@ -106,7 +106,7 @@ where
     const IS_AUTO_KEY: bool = L::IS_AUTO_KEY;
 }
 
-type FinalKey<T, const KEY: Key, ParentKey> =
+pub type FinalKey<T, const KEY: Key, ParentKey> =
     ResolverKey<<T as StorableHint<ParentKey>>::PreferredKey, ManualKey<KEY, ParentKey>>;
 
 // `AutoStorableHint` trait figures out that storage key it should use.

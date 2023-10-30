@@ -9,8 +9,6 @@ use crate::engine::EnvInstance;
 use core::fmt::Debug;
 use ink_engine::test_api::RecordedDebugMessages;
 use std::panic::UnwindSafe;
-//use crate::engine::off_chain::call_data::CallData;
-use ink_engine::ChainExtension;
 
 use crate::{
     call::{
@@ -786,7 +784,9 @@ where
     /// On failure this returns an outer [`ink::env::Error`][`crate::Error`] or inner
     /// [`ink::primitives::LangError`][`ink_primitives::LangError`], both of which can be
     /// handled by the caller.
-    pub fn try_invoke(&self) -> core::result::Result<ink_primitives::MessageResult<R>, crate::Error> {
+    pub fn try_invoke(
+        &self,
+    ) -> core::result::Result<ink_primitives::MessageResult<R>, crate::Error> {
         crate::invoke_contract(self)
     }
 }
@@ -827,7 +827,9 @@ where
     /// On failure this returns an outer [`ink::env::Error`][`crate::Error`] or inner
     /// [`ink::primitives::LangError`][`ink_primitives::LangError`], both of which can be
     /// handled by the caller.
-    pub fn try_invoke(&self) -> core::result::Result<ink_primitives::MessageResult<R>, crate::Error> {
+    pub fn try_invoke(
+        &self,
+    ) -> core::result::Result<ink_primitives::MessageResult<R>, crate::Error> {
         crate::invoke_contract_delegate(self)
     }
 }

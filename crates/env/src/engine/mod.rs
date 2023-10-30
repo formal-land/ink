@@ -14,7 +14,6 @@
 
 // our modifications
 pub use crate::backend_and_call_builder_and_engine_and_engine_test_api_and_error::OnInstance;
-pub(crate) use crate::backend_and_call_builder_and_engine_and_engine_test_api_and_error::decode_instantiate_result;
 use cfg_if::cfg_if;
 
 cfg_if! {
