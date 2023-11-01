@@ -34,7 +34,7 @@ use crate::{
 use scale::Encode;
 use std::panic::panic_any;
 
-type Result = core::result::Result<(), Error>;
+pub type Result = core::result::Result<(), Error>;
 
 macro_rules! define_error_codes {
     (
